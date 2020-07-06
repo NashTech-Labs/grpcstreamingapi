@@ -1,0 +1,12 @@
+syntax = "proto3";
+package proto;
+
+service Clock {
+    rpc GetTime(TimeRequest) returns (stream TimeResponse) {}
+}
+
+message TimeRequest {}
+
+message TimeResponse {
+    int64 currentTime = 1;
+}
